@@ -29,4 +29,5 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
-
+# rerun bash for new environment 
+exec bash
