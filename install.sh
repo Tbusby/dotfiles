@@ -6,7 +6,7 @@
 
 ###### Variables
 dir=~/dotfiles		# dotfiles dir
-olddir=~/dotfiles_old	# old dotfiles backup dir
+olddir=~/old-dotfiles	# old dotfiles backup dir
 files="bashrc vimrc vim"	# list of files/folders to symlink in home
 
 ######
