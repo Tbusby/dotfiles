@@ -29,14 +29,14 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
-# Source new profile 
-if [[ "$SHELL" == *bash* ]]; then 
-    echo "Current shell is bash"
-    source ~/.bashrc
-elif [[ "$SHELL" == *zsh* ]]; then
-    echo "Current shell is zsh"
-    source ~/.zshrc
-else
-    echo "Current shell is unkown [${SHELL}]"
-fi
+## Auto Source new profilie  - will get this working one day  
+#if [[ "$SHELL" == *bash* ]]; then 
+#    echo "Current shell is bash"
+#    source ~/.bashrc
+#elif [[ "$SHELL" == *zsh* ]]; then
+#    echo "Current shell is zsh"
+#    source ~/.zshrc
+#else
+#    echo "Current shell is unkown [${SHELL}]"
+#fi
 
