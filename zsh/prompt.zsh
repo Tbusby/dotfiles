@@ -113,7 +113,7 @@ function current_pwd {
 
 
 PROMPT='
-${PR_GREEN}[%*]%{$reset_color%} ${PR_YELLOW}%n%{$reset_color%}@${PR_BOLD_BLUE}$(box_name)%{$reset_color%}:${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%}  $(git_prompt_string)
+${PR_GREEN}[%*]%{$reset_color%} ${PR_YELLOW}%n%{$reset_color%}@${PR_BOLD_BLUE}$(box_name)%{$reset_color%}:${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%}  $(git_prompt_string)%{$reset_color%}
 $(prompt_char) '
 
 # special prompt
