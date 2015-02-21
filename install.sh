@@ -30,5 +30,11 @@ for file in $files; do
 done
 
 # Source new profile 
-#source ~/.bashrc
-source ~/.zshrc
+if [[ $SHELL -eq "/bin/bash" ]]; then 
+    echo "Current shell is bash"
+    source ~/.bashrc
+else
+    echo "Current shell is zsh"
+    source ~/.zshrc
+fi
+
