@@ -30,4 +30,5 @@ for file in $files; do
 done
 
 # Source new profile 
-source ~/.bashrc
+#source ~/.bashrc
+source ~/.zshrc
