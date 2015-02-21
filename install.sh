@@ -30,11 +30,13 @@ for file in $files; do
 done
 
 # Source new profile 
-if [[ $SHELL -eq "/bin/bash" ]]; then 
+if [[ "$SHELL" == *bash* ]]; then 
     echo "Current shell is bash"
     source ~/.bashrc
-else
+elif [[ "$SHELL" == *zsh* ]]; then
     echo "Current shell is zsh"
     source ~/.zshrc
+else
+    echo "Current shell is unkown [${SHELL}]"
 fi
 
