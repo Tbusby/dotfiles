@@ -8,9 +8,11 @@
 
 # fancy git prompts
 function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
-    hg root >/dev/null 2>/dev/null && echo '☿' && return
-    echo '○'
+    #git branch >/dev/null 2>/dev/null && echo '±' && return
+    #hg root >/dev/null 2>/dev/null && echo '☿' && return
+    #echo '○'
+    
+    echo '$'
 }
 
 # interesting way of setting a hostname??
@@ -107,10 +109,15 @@ function current_pwd {
   echo $(pwd | sed -e "s,^$HOME,~,")
 }
 
+#  {$FG[239]%}
+
+
 PROMPT='
-${PR_GREEN}%n%{$reset_color%} %{$FG[239]%}at%{$reset_color%} ${PR_BOLD_BLUE}$(box_name)%{$reset_color%} %{$FG[239]%}in%{$reset_color%} ${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)
+${PR_GREEN}[%*]%{$reset_color%} ${PR_YELLOW}%n%{$reset_color%}@${PR_BOLD_BLUE}$(box_name)%{$reset_color%}:${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%}  $(git_prompt_string)
 $(prompt_char) '
 
+# special prompt
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
-RPROMPT='${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_RED}${ruby_version}%{$reset_color%}'
+# Right side prompt 
+#RPROMPT='${PR_GREEN}[%*]%{$reset_color%}'

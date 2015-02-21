@@ -8,5 +8,5 @@ source ~/.zsh/prompt.zsh
 source ~/.zsh/completion.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/functions.zsh
-source ~/.zsh/history.zsh
+source ~/.zsh/hist.zsh
 source ~/.zsh/zsh_hooks.zsh 
