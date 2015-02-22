@@ -26,6 +26,12 @@ alias la='ls -A'
 alias l='ls -CF'
 alias cls='clear'
 alias wq='echo "Hodor....."'
+alias ..='cd ..'
+alias ...='cd ../..'
+
+if [[ -x `which nc` ]]; then
+  alias nyan='nc -v nyancat.dakko.us 23' # nyan cat
+fi
 
 alias pupapp='sudo -E puppet apply /etc/puppet/manifests/site.pp --modulepath=/etc/puppet/modules --verbose'
 
