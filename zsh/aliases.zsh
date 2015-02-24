@@ -5,9 +5,13 @@
 # -------------------------------------------------------------------
 #alias foobar='nocorrect foobar'
 alias g8='nocorrect g8'
-alias cp='nocorrect cp '
-alias mv='nocorrect mv '
-alias mkdir='nocorrect mkdir '
+alias cp='nocorrect cp'
+alias mv='nocorrect mv'
+alias mkdir='nocorrect mkdir'
+alias git='nocorrect git'
+
+
+
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
