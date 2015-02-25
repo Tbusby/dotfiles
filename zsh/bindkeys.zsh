@@ -13,4 +13,4 @@ bindkey "^[[A"      history-search-backward              # up arrow
 bindkey "^D"      delete-char                          # ctrl-d
 bindkey "^F"      forward-char                         # ctrl-f
 bindkey "^B"      backward-char                        # ctrl-b
-bindkey -v   # Default to standard vi bindings, regardless of editor string
+#bindkey -v   # Default to standard vi bindings, regardless of editor string
