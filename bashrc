@@ -39,7 +39,7 @@ esac
 
 
 # Source git-prompt for git stuff
-source ~/.git-prompt.sh
+#source ~/.git-prompt.sh
 
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -60,10 +60,10 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     #PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$'
-    PS1='${debian_chroot:+($debian_chroot)}\[\e[0;33m\]\t \033[01;32m\]\u\[\e[0;37m\]@\h\[\033[00m\]:\[\e[0;33m\]\w\[\033[00m\]\$(__git_ps1 " (%s)")]\n\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\e[0;33m\]\t \033[01;32m\]\u\[\e[0;37m\]@\h\[\033[00m\]:\[\e[0;33m\]\w\[\033[00m\]\n\$ '
 else
 #    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$$(__git_ps1 " (%s)")]\n\$ '
-    PS1='${debian_chroot:+($debian_chroot)}\[\e[0;33m\]\t \033[01;32m\]\u\[\e[0;37m\]@\h\[\033[00m\]:\[\e[0;33m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\n\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\e[0;33m\]\t \033[01;32m\]\u\[\e[0;37m\]@\h\[\033[00m\]:\[\e[0;33m\]\w\[\033[00m\]\n\$ '
 fi
 unset color_prompt force_color_prompt
 
