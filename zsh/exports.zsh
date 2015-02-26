@@ -2,7 +2,7 @@
 
 # Currently this path is appended to dynamically when picking a ruby version
 # zshenv has already started PATH with rbenv/RVM so append only here
-export PATH=$PATH~/bin:/usr/local/bin:/usr/local/sbin:~/bin
+export PATH=$PATH~/bin:/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 
 # Set default console Java to 1.8
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home
