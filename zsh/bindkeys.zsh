@@ -18,4 +18,4 @@ bindkey "^F"      forward-char                         # ctrl-f
 bindkey "^B"      backward-char                        # ctrl-b
 bindkey "^[^[[D"  backward-word                        # alt left arrow
 bindkey "^[^[[C"  forward-word                         # alt rigth arrow
-bindkey -v   # Default to standard vi bindings, regardless of editor string
+#bindkey -v   # Default to standard vi bindings, regardless of editor string
