@@ -49,7 +49,7 @@ if [[ $IS_MAC -eq 1 ]]; then
     alias oo='open .' # open current directory in OS X Finder
     alias cello='say -v cellos "di di di di di di di di di di di di di di di di di di di di di di di di di di"'
     alias p='pwd | tr -d "\n" | pbcopy' # Copies Path to clipboard
-    alias flushdns'sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches;echo flushed'  # Flush the DNS cache (Yosemite)
+    alias flushdns='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches;echo flushed'  # Flush the DNS cache (Yosemite)
 fi
 
 
