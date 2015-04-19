@@ -50,6 +50,8 @@ if [[ $IS_MAC -eq 1 ]]; then
     alias cello='say -v cellos "di di di di di di di di di di di di di di di di di di di di di di di di di di"'
     alias p='pwd | tr -d "\n" | pbcopy' # Copies Path to clipboard
     alias flushdns='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches;echo flushed'  # Flush the DNS cache (Yosemite)
+    alias startmyconf='sudo VBoxHeadless --startvm "avst-cloud_avst-dev999_1426264585688_23014" --vrde off & echo "Confluence started on 192.168.33.31(avst-dev999)"'  # Starts my confluence VM 
+
 fi
 
 
