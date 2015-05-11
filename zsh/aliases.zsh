@@ -32,7 +32,6 @@ alias cls='clear'
 alias wq='echo "Hodor....."'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias excuse='curl -s http://programmingexcuses.com/ | grep -w '.*.<\/a>' | awk '{print $0}' | cut -d ">" -f 3 | cut -d "<" -f1'
 
 if [[ -x `which nc` ]]; then
   alias nyan='nc -v nyancat.dakko.us 23' # nyan cat
