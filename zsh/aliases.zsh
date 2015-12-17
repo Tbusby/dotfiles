@@ -42,6 +42,11 @@ alias pupapp='sudo -E puppet apply /etc/puppet/manifests/site.pp --modulepath=/e
 # mysql auto log in definitions
 alias smysql='sudo mysql --defaults-file=/etc/mysql/debian.cnf'
 
+# get the username and pass from an atlassian config 
+alias userpass='grep "user\|pass" '
+
+
+
 # -------------------------------------------------------------------
 # Mac only
 # -------------------------------------------------------------------
