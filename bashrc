@@ -120,6 +120,6 @@ fi
 # mysql auto log in definitions
 alias smysql='sudo mysql --defaults-file=/etc/mysql/debian.cnf'
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+alias whatido='grep -i "servername" /opt/apache/config/* || grep -i "servername" /etc/httpd/conf.d/* && ls /opt'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
