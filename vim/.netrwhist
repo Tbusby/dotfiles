@@ -1,6 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/tbusby/work/puppet/dell-virtual-boxes'
 let g:netrw_dirhist_2='/Users/tbusby/work/repos/asciivid/p2pvc/src'
 let g:netrw_dirhist_3='/private/etc'
 let g:netrw_dirhist_4='/Users/tbusby/test'
+let g:netrw_dirhist_5='/etc'
+let g:netrw_dirhist_6='/opt/edf_stg_apache/conf'
+let g:netrw_dirhist_7='/opt/edf_stg_conf'
+let g:netrw_dirhist_8='/etc/apache2/sites-enabled'
