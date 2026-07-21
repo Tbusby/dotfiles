@@ -1,7 +1,6 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[▓](#a3aed2)\
 $os\
 [](bg:#769ff0 fg:#a3aed2)\
 $directory\
@@ -14,7 +13,8 @@ $bun\
 $rust\
 $golang\
 $php\
-[](fg:#212736 bg:#1d2230)\
+$python\
+[](fg:#212736 )\
 \n$character"""
 
 [directory]
@@ -36,7 +36,7 @@ format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
 
 [git_status]
 style = "bg:#394260"
-format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+format = '[[($all_status$ahead_behind )](fg:#ff4499 bg:#394260)]($style)'
 
 [nodejs]
 symbol = ""
@@ -60,6 +60,11 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [php]
 symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[python]
+symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
