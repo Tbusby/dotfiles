@@ -1,17 +1,17 @@
 # Better ls
-alias ls='eza --icons'
+alias ls='eza --icons auto'
 
 # Detailed listing
-alias ll='eza -lh --icons --git'
+alias ll='eza -lh --icons auto --git'
 
 # Detailed listing including hidden files
-alias la='eza -lah --icons --git'
+alias la='eza -lah --icons auto --git'
 
 # List by time modified
-alias lst='eza -lh --sort=modified --icons --git'
+alias lst='eza -lh --sort=modified --icons auto --git'
 
 # Tree view
-alias tree='eza --tree --icons'
+alias tree='eza --tree --icons auto'
 
 # Reuse ls completions for eza (avoids defining a separate completion function)
 compdef eza=ls
