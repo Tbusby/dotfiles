@@ -1,0 +1,123 @@
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+version = 4
+final_space = true
+async = true
+
+[[blocks]]
+type = "prompt"
+alignment = "left"
+newline = true
+
+  [[blocks.segments]]
+  type = "os"
+  style = "powerline"
+  template = " {{ .Icon }} "
+  foreground = "p:text-dark"
+  background = "p:light-grey"
+
+  [[blocks.segments]]
+  type = "path"
+  style = "powerline"
+  powerline_symbol = ""
+  foreground = "p:text-light"
+  background = "p:path-bg"
+  template = " 󰝰 {{ .Path }} "
+
+    [blocks.segments.options]
+    style = "agnoster_full"
+
+  [[blocks.segments]]
+  type = "git"
+  style = "powerline"
+  powerline_symbol = ""
+  foreground = "p:dark-grey"
+  background = "p:green"
+  template = "  {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} {{ end }}{{ if gt .Behind 0 }} 󱦳{{ end }}{{ if gt .Ahead 0 }} 󱦲{{ end }} "
+
+    [blocks.segments.options]
+      branch_icon = ""
+      fetch_status = true
+
+  [[blocks.segments]]
+  type = "python"
+  style = "powerline"
+  powerline_symbol = ""
+  template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
+  foreground = "p:light-grey"
+  background = "p:dark-grey"
+
+    [blocks.segments.options]
+    display_mode = "environment"
+
+[[blocks]]
+type = "prompt"
+alignment = "right"
+
+  [[blocks.segments]]
+  type = "kubectl"
+  style = "powerline"
+  powerline_symbol = ""
+  template = "⎈ {{ .Context }}{{ if .Namespace }} :: {{ .Namespace }}{{ end }} "
+  foreground = "p:light-grey"
+  background = "p:path-bg"
+  leading_diamond = ""
+
+  [[blocks.segments]]
+  type = "terraform"
+  style = "powerline"
+  powerline_symbol = ""
+  template = " {{ .WorkspaceName }} "
+  foreground = "p:light-grey"
+  background = "p:dark-grey"
+  leading_diamond = ""
+
+  [[blocks.segments]]
+  type = "docker"
+  style = "powerline"
+  powerline_symbol = ""
+  template = " {{ .Context }} "
+  foreground = "p:light-grey"
+  background = "p:dark-grey"
+  leading_diamond = ""
+
+  [[blocks.segments]]
+  type = "executiontime"
+  style = "diamond"
+  template = " {{ .FormattedMs }} "
+  foreground = "p:dark-grey"
+  background = "p:light-grey"
+  leading_diamond = ""
+
+    [blocks.segments.options]
+    threshold = 3_000
+    style = "austin"
+
+[[blocks]]
+type = "prompt"
+alignment = "left"
+newline = true
+
+  [[blocks.segments]]
+  type = "text"
+  style = "plain"
+  foreground = "p.light-grey"
+  template = ""
+
+[transient_prompt]
+  background = "transparent"
+  foreground = "p.light-grey"
+  template = " "
+
+[palette]
+text-light = "#ffffff"
+path-bg = "#7aa2f7"
+git-bg = "#b4f9f8"
+text-dark = "#1a1b26"
+red = "#f7768e"
+orange = "#ff9e64"
+light-orange = "#e0af68"
+purple = "#bb9af7"
+light-grey = "#a9b1d6"
+dark-grey = "#414868"
+green = "#73dacb"
+
