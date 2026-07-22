@@ -31,7 +31,7 @@ newline = true
   style = "powerline"
   powerline_symbol = ""
   foreground = "p:dark-grey"
-  background = "p:green"
+  background = "p:git-bg"
   template = "  {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }} {{ end }}{{ if gt .Behind 0 }} 󱦳{{ end }}{{ if gt .Ahead 0 }} 󱦲{{ end }} "
 
     [blocks.segments.options]
@@ -117,7 +117,7 @@ newline = true
 [palette]
 text-light = "#ffffff"
 path-bg = "#7aa2f7"
-git-bg = "#b4f9f8"
+git-bg = "#edbfff"
 text-dark = "#1a1b26"
 red = "#f7768e"
 orange = "#ff9e64"
