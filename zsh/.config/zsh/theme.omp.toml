@@ -108,6 +108,12 @@ newline = true
   foreground = "p.light-grey"
   template = " "
 
+[secondary_prompt]
+  background = "transparent"
+  foreground = "p.light-grey"
+  template = "  "
+  
+
 [palette]
 text-light = "#ffffff"
 path-bg = "#7aa2f7"
