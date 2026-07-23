@@ -1,52 +1,3 @@
-# Better ls
-alias ls='eza --icons auto'
-
-# Detailed listing
-alias ll='eza -lh --icons auto --git'
-
-# Detailed listing including hidden files
-alias la='eza -lah --icons auto --git'
-
-# List by time modified
-alias lst='eza -lh --sort=modified --icons auto --git'
-
-# Tree view
-alias tree='eza --tree --icons auto'
-
-# Reuse ls completions for eza (avoids defining a separate completion function)
-compdef eza=ls
-
-# Better cat
- alias cat='bat'
-
-# =========================================================
-# Core utilities
-# =========================================================
-
-alias grep='rg --color=auto'
-alias diff='diff --color=auto'
-alias df='df -h'
-
-# =========================================================
-# Navigation
-# =========================================================
-
-alias -- -='cd -'  # -- prevents - being parsed as a flag; cd - jumps to previous directory
-
-lf() { # zsh follow lf navigation
-    tmp=$(mktemp)
-    command lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir=$(cat "$tmp")
-        rm -f "$tmp"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-}
-
-# =========================================================
-# Editor
-# =========================================================
-
 alias vim='nvim'
 alias vi='nvim'
 
@@ -56,4 +7,78 @@ alias vi='nvim'
 
 alias glog='PAGER="less -F -X" git log'                              # -F quit if one screen, -X no clear on exit
 alias gadog='PAGER="less -F -X" git log --all --decorate --oneline --graph'
+
+
+# File system
+if command -v eza &> /dev/null; then
+  alias ls='eza -lh --group-directories-first --icons=auto'
+  alias lsa='ls -a'
+  alias lt='eza --tree --level=2 --long --icons --git'
+  alias lta='lt -a'
+  # List by time modified
+  alias lst='eza -lh --sort=modified --icons auto --git'
+  # Tree view
+  alias tree='eza --tree --icons auto'
+  # Reuse ls completions for eza (avoids defining a separate completion function)
+  compdef eza=ls
+fi
+
+if [[ "$TERM" == "xterm-kitty" ]]; then
+  alias ff="fzf --preview 'case \$(file --mime-type -b {}) in image/*) kitty icat --clear --transfer-mode=memory --stdin=no --place=\${FZF_PREVIEW_COLUMNS}x\${FZF_PREVIEW_LINES}@0x0 {} ;; *) bat --style=numbers --color=always {} ;; esac'"
+else
+  alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+fi
+alias eff='$EDITOR "$(ff)"'
+sff() { if [ $# -eq 0 ]; then echo "Usage: sff <destination> (e.g. sff host:/tmp/)"; return 1; fi; local file; file=$(find . -type f -printf '%T@\t%p\n' | sort -rn | cut -f2- | ff) && [ -n "$file" ] && scp "$file" "$1"; }
+
+if command -v zoxide &> /dev/null; then
+  alias cd="zd"
+  zd() {
+    if (( $# == 0 )); then
+      builtin cd ~ || return
+    elif [[ -d $1 ]]; then
+      builtin cd "$1" || return
+    else
+      if ! z "$@"; then
+        echo "Error: Directory not found"
+        return 1
+      fi
+
+      printf "\U000F17A9 "
+      pwd
+    fi
+  }
+fi
+
+open() (
+  xdg-open "$@" >/dev/null 2>&1 &
+)
+
+# Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Tools
+alias c='opencode'
+alias cx='printf "\033[2J\033[3J\033[H" && claude --permission-mode bypassPermissions'
+alias cy='codex -s danger-full-access -a never'
+alias d='docker'
+alias r='rails'
+alias t='tmux attach || tmux new -s Work'
+alias ic='tdl c'
+alias ix='tdl cx'
+alias icx='tdl c cx'
+alias mup='MISE_MINIMUM_RELEASE_AGE=0 mise up'
+n() { if [ "$#" -eq 0 ]; then command nvim . ; else command nvim "$@"; fi; }
+
+# Git
+alias g='git'
+alias gcm='git commit -m'
+alias gcam='git commit -a -m'
+alias gcad='git commit -a --amend'
+
+
+
+
 
