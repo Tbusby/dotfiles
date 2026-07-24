@@ -78,7 +78,6 @@ alias gcm='git commit -m'
 alias gcam='git commit -a -m'
 alias gcad='git commit -a --amend'
 
-
-
+alias cls='clear'
 
 
