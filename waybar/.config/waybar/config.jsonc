@@ -64,7 +64,7 @@
     "format": "{:L%A %H:%M}",
     "format-alt": "{:L%d %B W%V %Y}",
     "tooltip": false,
-    "on-click-right": "thunderbird --calendar"
+    "on-click-right": "thunderbird --calendar",
   },
   "custom/weather": {
     "exec": "$OMARCHY_PATH/default/waybar/weather.sh",
