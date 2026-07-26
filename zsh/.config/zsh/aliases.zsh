@@ -1,14 +1,3 @@
-alias vim='nvim'
-alias vi='nvim'
-
-# =========================================================
-# Git
-# =========================================================
-
-alias glog='PAGER="less -F -X" git log'                              # -F quit if one screen, -X no clear on exit
-alias gadog='PAGER="less -F -X" git log --all --decorate --oneline --graph'
-
-
 # File system
 if command -v eza &> /dev/null; then
   alias ls='eza -lh --group-directories-first --icons=auto'
@@ -64,20 +53,17 @@ alias c='opencode'
 alias cx='printf "\033[2J\033[3J\033[H" && claude --permission-mode bypassPermissions'
 alias cy='codex -s danger-full-access -a never'
 alias d='docker'
-alias r='rails'
-alias t='tmux attach || tmux new -s Work'
-alias ic='tdl c'
-alias ix='tdl cx'
-alias icx='tdl c cx'
 alias mup='MISE_MINIMUM_RELEASE_AGE=0 mise up'
 n() { if [ "$#" -eq 0 ]; then command nvim . ; else command nvim "$@"; fi; }
+alias vim='nvim'
+alias vi='nvim'
+alias cls='clear'
 
 # Git
 alias g='git'
 alias gcm='git commit -m'
 alias gcam='git commit -a -m'
 alias gcad='git commit -a --amend'
-
-alias cls='clear'
-
+alias glog='PAGER="less -F -X" git log'                              # -F quit if one screen, -X no clear on exit
+alias gadog='PAGER="less -F -X" git log --all --decorate --oneline --graph'
 
