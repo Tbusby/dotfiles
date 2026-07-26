@@ -23,7 +23,7 @@ fi
 export GPG_TTY=$(tty)
 
 # ---------- Starship ----------
-export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
+#export STARSHIP_CONFIG="$ZDOTDIR/starship.toml"
 
 # ---------- PATH ----------
 # Personal binaries/scripts
